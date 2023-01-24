@@ -30,7 +30,7 @@ struct ArticleView: View {
             VStack(alignment: .leading) {
                 Text(article.title)
                     .font(.title.bold())
-                Text(article.releaseDate.articleDate)
+                Text(articleDate)
                     .font(.caption)
                     .foregroundColor(.gray)
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -56,13 +56,11 @@ struct ArticleView: View {
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
     }
-}
-
-extension Date {
+    
     var articleDate: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "eee, MMM d, ''yy"
-        return formatter.string(from: self)
+        return formatter.string(from: article.releaseDate)
     }
 }
 
