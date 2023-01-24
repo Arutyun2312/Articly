@@ -23,7 +23,6 @@ struct ArticleView: View {
                 $0
                     .resizable()
                     .scaledToFit()
-                    .background(Color.white)
                     .frame(maxHeight: 200)
                     .shadow(radius: 10)
             }
